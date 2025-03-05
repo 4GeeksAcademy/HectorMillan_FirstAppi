@@ -7,6 +7,7 @@ app = Flask(__name__)
 @app.route('/todos', methods=['GET'])
 def hello_world():
     json_text = jsonify(todos)
+    
     return json_text
 
 
@@ -17,6 +18,7 @@ def add_new_todo():
     request_body = request.json
     print("Request Body: ", request_body)
     todos.append(request_body)
+
     return todos
 
 
@@ -26,6 +28,7 @@ def add_new_todo():
 def delete_todo(position):
     print("Position to DELETE: ", position)
     del todos[position]
+
     return "something"
 
 
